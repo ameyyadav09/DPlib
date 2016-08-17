@@ -29,7 +29,7 @@ int fast_pow(long long base, long long n, long long m) {
 
 int main() {
 	//a*x = 1 (%m) we need to find x.
-	int a = 8, m = 11;
+	int a = 9, m = 11;
 	cout << fast_pow(a,m-2,m);
 	return 0;
 }
