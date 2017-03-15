@@ -3,9 +3,7 @@
 using namespace std;
 
 /* Utility function to get max of 2 integers */
-int max(int a, int b) {
-    return (a > b)? a : b;
-}
+#define max(a,b) (a>b)?a:b;
 
 /* Returns length of LCS for X[0..m-1], Y[0..n-1] */
 int LongestCommonSubsequence( string x, string y , int lx, int ly ) {

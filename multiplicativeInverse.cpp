@@ -16,9 +16,7 @@ int fast_pow(long long base, long long n, long long m) {
 	if (n == 1) {
 		return base;
 	}
-	cout <<","<< n<<","<<m<<endl;
 	long long decr = fast_pow(base, n/2, m);
-	cout << decr <<","<< n<<","<<m<<endl;
 	if (n%2 == 0) {
 		return (decr * decr)%m;
 	}
