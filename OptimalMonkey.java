@@ -34,7 +34,7 @@ output:
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-class Solution {
+class CandidateCode {
     public static int getMax(int [] heights, int n) {
         int [][] res = new int[n+1][n+1];
         for(int i = 0; i <= n; i++) {
@@ -42,15 +42,18 @@ class Solution {
                 if (i == 0 || j == 0) {
                     res[i][j] = 0;
                 }
+                else if (i == j){
+                    res[i][j] = 0;
+                }
                 else {
                     //finding min distance in clock-wise and anti-clock-wise
-                    int dis = (i == j)?0:Math.min(n-Math.abs(i-j),  Math.abs(i-j));
+                    int dis =  Math.min(n-Math.abs(i-j),  Math.abs(i-j));
                     //finding max steps
                     res[i][j] = Math.max(heights[i-1]+heights[j-1]+dis, Math.max(res[i-1][j-1], Math.max(res[i-1][j], res[i][j-1])));
                 }
             }
         }
-        return res[n][n];
+        return res[n][n-1];
     }
 
     public static void main(String ... args) throws Exception {
