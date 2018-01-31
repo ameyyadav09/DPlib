@@ -34,15 +34,12 @@ output:
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-class CandidateCode {
+public class OptimalMonkey {
     public static int getMax(int [] heights, int n) {
         int [][] res = new int[n+1][n+1];
         for(int i = 0; i <= n; i++) {
-            for (int j = 0; j <= n; j++) {
+            for (int j = i+1; j <= n; j++) {
                 if (i == 0 || j == 0) {
-                    res[i][j] = 0;
-                }
-                else if (i == j){
                     res[i][j] = 0;
                 }
                 else {
@@ -53,7 +50,7 @@ class CandidateCode {
                 }
             }
         }
-        return res[n][n-1];
+        return res[n-1][n];
     }
 
     public static void main(String ... args) throws Exception {
